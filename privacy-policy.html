@@ -3,10 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Privacy Policy - ExaMore</title>
   <meta name="description"
     content="Official Privacy Policy for ExaMore by Rishvi. Learn how we collect, protect, and handle user assessment and classroom data in compliance with Google Play Store guidelines.">
+  <link rel="canonical" href="https://examore.rishvi.app/privacy-policy.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
@@ -26,6 +27,7 @@
       --text-primary: #F8FAFC;
       --text-secondary: #94A3B8;
       --text-muted: #64748B;
+      --radius-sm: 8px;
       --radius-md: 14px;
       --radius-lg: 20px;
     }
@@ -36,18 +38,27 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+      text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
     body {
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background-color: var(--dark-bg);
       color: var(--text-primary);
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
 
     a {
       color: var(--primary-light);
       text-decoration: none;
-      transition: color 0.2s;
+      transition: color 0.2s ease, opacity 0.2s ease;
     }
 
     a:hover {
@@ -55,6 +66,7 @@
     }
 
     .container {
+      width: 100%;
       max-width: 920px;
       margin: 0 auto;
       padding: 0 24px;
@@ -65,25 +77,29 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(13, 18, 31, 0.88);
+      background: rgba(13, 18, 31, 0.92);
       backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--dark-border);
+      width: 100%;
     }
 
     .navbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 72px;
+      min-height: 72px;
+      gap: 16px;
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 12px;
       font-size: 20px;
       font-weight: 800;
       color: #fff;
+      flex-shrink: 0;
     }
 
     .brand-icon {
@@ -95,24 +111,32 @@
       align-items: center;
       justify-content: center;
       font-size: 20px;
+      box-shadow: 0 2px 10px rgba(124, 58, 237, 0.35);
+      flex-shrink: 0;
     }
 
     .nav-tabs {
-      display: flex;
+      display: inline-flex;
       background: var(--dark-surface);
       border: 1px solid var(--dark-border);
       border-radius: 30px;
       padding: 4px;
       gap: 4px;
+      flex-shrink: 0;
     }
 
     .tab-link {
-      padding: 8px 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 18px;
       border-radius: 24px;
       font-size: 14px;
       font-weight: 600;
       color: var(--text-secondary);
-      transition: all 0.2s;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      min-height: 38px;
     }
 
     .tab-link.active {
@@ -128,9 +152,9 @@
 
     /* Hero / Header */
     .policy-header {
-      padding: 60px 0 32px;
+      padding: clamp(36px, 7vw, 60px) 0 clamp(24px, 4vw, 36px);
       border-bottom: 1px solid var(--dark-border);
-      margin-bottom: 40px;
+      margin-bottom: clamp(24px, 5vw, 40px);
     }
 
     .badge {
@@ -145,18 +169,40 @@
       font-size: 13px;
       font-weight: 600;
       margin-bottom: 16px;
+      max-width: 100%;
+      line-height: 1.4;
     }
 
     .policy-title {
-      font-size: 38px;
+      font-size: clamp(26px, 5vw, 38px);
       font-weight: 800;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       line-height: 1.25;
+      letter-spacing: -0.5px;
     }
 
     .meta-info {
       color: var(--text-secondary);
       font-size: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 16px;
+      align-items: center;
+    }
+
+    .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-item code {
+      background: var(--dark-surface);
+      border: 1px solid var(--dark-border);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: var(--primary-light);
+      font-size: 13px;
     }
 
     /* Content styling */
@@ -164,28 +210,19 @@
       background: var(--dark-card);
       border: 1px solid var(--dark-border);
       border-radius: var(--radius-lg);
-      padding: 40px;
+      padding: clamp(20px, 5vw, 40px);
       margin-bottom: 40px;
     }
 
-    @media (max-width: 640px) {
-      .content-box {
-        padding: 24px;
-      }
-
-      .policy-title {
-        font-size: 28px;
-      }
-    }
-
     h2 {
-      font-size: 22px;
+      font-size: clamp(19px, 3.5vw, 22px);
       font-weight: 700;
       color: #fff;
       margin: 36px 0 14px;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 10px;
+      line-height: 1.35;
     }
 
     h2:first-of-type {
@@ -193,23 +230,26 @@
     }
 
     h3 {
-      font-size: 17px;
+      font-size: clamp(16px, 2.5vw, 17px);
       font-weight: 600;
       color: #E2E8F0;
-      margin: 20px 0 10px;
+      margin: 22px 0 10px;
+      line-height: 1.4;
     }
 
     p {
       color: var(--text-secondary);
-      font-size: 15px;
+      font-size: clamp(14.5px, 2vw, 15px);
       margin-bottom: 16px;
+      line-height: 1.7;
     }
 
     ul,
     ol {
       color: var(--text-secondary);
-      font-size: 15px;
+      font-size: clamp(14.5px, 2vw, 15px);
       margin: 0 0 20px 24px;
+      line-height: 1.7;
     }
 
     li {
@@ -231,14 +271,26 @@
     .alert-callout p {
       margin: 0;
       color: #E2E8F0;
-      font-size: 14.5px;
+      font-size: clamp(14px, 2vw, 14.5px);
+    }
+
+    /* Responsive Table Container */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 20px 0 28px;
+      border: 1px solid var(--dark-border);
+      border-radius: var(--radius-md);
+      background: var(--dark-surface);
     }
 
     .data-table {
       width: 100%;
+      min-width: 580px;
       border-collapse: collapse;
-      margin: 20px 0 28px;
-      font-size: 14.5px;
+      font-size: clamp(13.5px, 1.8vw, 14.5px);
+      line-height: 1.6;
     }
 
     .data-table th,
@@ -246,27 +298,137 @@
       border: 1px solid var(--dark-border);
       padding: 12px 16px;
       text-align: left;
+      vertical-align: top;
     }
 
     .data-table th {
-      background: var(--dark-surface);
+      background: rgba(23, 30, 49, 0.95);
       color: #fff;
       font-weight: 700;
+      white-space: nowrap;
     }
 
     .data-table td {
       color: var(--text-secondary);
     }
 
+    .data-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .table-hint {
+      display: none;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: -16px;
+      margin-bottom: 20px;
+      text-align: right;
+    }
+
     /* Footer */
     .footer {
       border-top: 1px solid var(--dark-border);
       background: var(--dark-surface);
-      padding: 40px 0 24px;
+      padding: 40px 0 28px;
       margin-top: 60px;
       font-size: 14px;
       color: var(--text-muted);
       text-align: center;
+      line-height: 1.7;
+    }
+
+    .footer a {
+      color: var(--text-secondary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .footer a:hover {
+      color: #fff;
+    }
+
+    /* Media Queries for Maximum Responsiveness */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 18px;
+      }
+
+      .table-hint {
+        display: block;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        padding: 10px 0;
+        min-height: 64px;
+      }
+
+      .brand {
+        font-size: 18px;
+        gap: 8px;
+      }
+
+      .brand-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+      }
+
+      .nav-tabs {
+        padding: 3px;
+        gap: 2px;
+      }
+
+      .tab-link {
+        padding: 6px 12px;
+        font-size: 12.5px;
+        min-height: 34px;
+      }
+
+      ul, ol {
+        margin-left: 20px;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .container {
+        padding: 0 14px;
+      }
+
+      .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 0;
+      }
+
+      .brand {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .nav-tabs {
+        width: 100%;
+        display: flex;
+      }
+
+      .tab-link {
+        flex: 1;
+        text-align: center;
+        padding: 8px 6px;
+        font-size: 12px;
+      }
+
+      .meta-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .alert-callout {
+        padding: 12px 14px;
+      }
     }
   </style>
 </head>
@@ -276,13 +438,13 @@
   <!-- Sticky Navbar with 2 Tabs -->
   <header class="header">
     <div class="container navbar">
-      <a href="index.html" class="brand">
+      <a href="index.html" class="brand" aria-label="ExaMore Home">
         <div class="brand-icon">🎓</div>
         <span>ExaMore</span>
       </a>
 
       <!-- Tab Switcher -->
-      <nav class="nav-tabs">
+      <nav class="nav-tabs" aria-label="Documentation Navigation">
         <a href="index.html" class="tab-link">App Usage Guide</a>
         <a href="privacy-policy.html" class="tab-link active">Privacy Policy</a>
       </nav>
@@ -294,11 +456,11 @@
     <div class="policy-header">
       <div class="badge">🛡️ Google Play Data Safety Compliant</div>
       <h1 class="policy-title">Privacy Policy for ExaMore</h1>
-      <p class="meta-info">
-        <strong>Effective Date:</strong> November 26, 2026 &nbsp;|&nbsp;
-        <strong>Developer:</strong> Rishvi &nbsp;|&nbsp;
-        <strong>Application:</strong> ExaMore (<code>com.examore.app</code>)
-      </p>
+      <div class="meta-info">
+        <span class="meta-item"><strong>Effective Date:</strong> November 26, 2026</span>
+        <span class="meta-item"><strong>Developer:</strong> Rishvi</span>
+        <span class="meta-item"><strong>Application:</strong> ExaMore (<code>com.rishvi.examore</code>)</span>
+      </div>
     </div>
 
     <article class="content-box">
@@ -319,38 +481,41 @@
       <p>We collect only the minimum personal and diagnostic data required to provide a reliable, fair, and
         cheat-resistant assessment environment:</p>
 
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Data Category</th>
-            <th>Specific Data Collected</th>
-            <th>Primary Purpose</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Personal Account Data</strong></td>
-            <td>Full Name, Email Address, 10-digit Mobile Number, Profile Photo URL, User Role (Student / Admin).</td>
-            <td>Account registration, authentication, student identification on scorecards, and instructor linking.</td>
-          </tr>
-          <tr>
-            <td><strong>Academic & Assessment Data</strong></td>
-            <td>Classroom enrollments, exam responses, scores, accuracy percentage, time taken, attempt counts.</td>
-            <td>Grading exams, generating performance analytics, enforcing allowed attempt limits, and gradebook export.
-            </td>
-          </tr>
-          <tr>
-            <td><strong>Anti-Cheating & Integrity Data</strong></td>
-            <td>Screen/app switch count during an active exam, window blur events.</td>
-            <td>Upholding academic integrity and preventing unauthorized multitasking during live timed tests.</td>
-          </tr>
-          <tr>
-            <td><strong>Device & Notification Data</strong></td>
-            <td>Firebase Cloud Messaging (FCM) Device Push Tokens, network connectivity state.</td>
-            <td>Delivering real push notifications for new exams, deadline updates, and 1-hour closing alerts.</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th scope="col">Data Category</th>
+              <th scope="col">Specific Data Collected</th>
+              <th scope="col">Primary Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Personal Account Data</strong></td>
+              <td>Full Name, Email Address, 10-digit Mobile Number, Profile Photo URL, User Role (Student / Admin).</td>
+              <td>Account registration, authentication, student identification on scorecards, and instructor linking.</td>
+            </tr>
+            <tr>
+              <td><strong>Academic & Assessment Data</strong></td>
+              <td>Classroom enrollments, exam responses, scores, accuracy percentage, time taken, attempt counts.</td>
+              <td>Grading exams, generating performance analytics, enforcing allowed attempt limits, and gradebook export.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Anti-Cheating & Integrity Data</strong></td>
+              <td>Screen/app switch count during an active exam, window blur events.</td>
+              <td>Upholding academic integrity and preventing unauthorized multitasking during live timed tests.</td>
+            </tr>
+            <tr>
+              <td><strong>Device & Notification Data</strong></td>
+              <td>Firebase Cloud Messaging (FCM) Device Push Tokens, network connectivity state.</td>
+              <td>Delivering real push notifications for new exams, deadline updates, and 1-hour closing alerts.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-hint">← Swipe horizontally to view full table details →</div>
 
       <h2>3. How We Use Your Information</h2>
       <p>We utilize the collected data strictly for educational and service delivery purposes, including:</p>
@@ -448,7 +613,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>© 2026 ExaMore by Rishvi. All rights reserved. | <a href="index.html">App Usage Guide</a> | <a
+      <p>© 2026 ExaMore by Rishvi. All rights reserved. &nbsp;|&nbsp; <a href="index.html">App Usage Guide</a> &nbsp;|&nbsp; <a
           href="privacy-policy.html">Privacy Policy</a></p>
     </div>
   </footer>
